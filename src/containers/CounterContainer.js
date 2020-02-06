@@ -18,15 +18,17 @@ class CounterContainer extends React.Component {
   };
 
   incrementEven = () => {
-    const { dispatch } = this.props;
     if (this.props.count % 2 === 0) {
+      const { dispatch } = this.props;
       dispatch(incrementCount());
     }
   };
 
   incrementOdd = () => {
-    const { dispatch } = this.props;
-    dispatch(incrementCount());
+    if (this.props.count % 2 === 1) {
+      const { dispatch } = this.props;
+      dispatch(incrementCount());
+    }
   };
 
 
