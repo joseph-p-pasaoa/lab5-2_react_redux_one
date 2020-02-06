@@ -3,9 +3,7 @@ import { connect } from "react-redux";
 import Counter from "../components/Counter";
 import {
   incrementCount,
-  decrementCount,
-  incrementCountEven,
-  incrementCountOdd
+  decrementCount
 } from "../actions/counterActions";
 
 class CounterContainer extends React.Component {
@@ -21,12 +19,14 @@ class CounterContainer extends React.Component {
 
   incrementEven = () => {
     const { dispatch } = this.props;
-    dispatch(incrementCountEven());
+    if (this.props.count % 2 === 0) {
+      dispatch(incrementCount());
+    }
   };
 
   incrementOdd = () => {
     const { dispatch } = this.props;
-    dispatch(incrementCountOdd());
+    dispatch(incrementCount());
   };
 
 
