@@ -1,7 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 import Counter from "../components/Counter";
-import { incrementCount, decrementCount } from "../actions/counterActions";
+import {
+  incrementCount,
+  decrementCount,
+  incrementCountEven,
+  incrementCountOdd,
+  incrementCountAsync
+} from "../actions/counterActions";
 
 class CounterContainer extends React.Component {
   increment = () => {
@@ -14,6 +20,21 @@ class CounterContainer extends React.Component {
     dispatch(decrementCount());
   };
 
+  incrementEven = () => {
+    const { dispatch } = this.props;
+    dispatch(incrementCountEven());
+  };
+
+  incrementOdd = () => {
+    const { dispatch } = this.props;
+    dispatch(incrementCountOdd());
+  };
+
+  incrementAsync = () => {
+    const { dispatch } = this.props;
+    dispatch(incrementCountAsync());
+  };
+
   render() {
     const { count } = this.props;
     console.log(this.props);
@@ -23,6 +44,9 @@ class CounterContainer extends React.Component {
         value={count}
         onIncrement={this.increment}
         onDecrement={this.decrement}
+        onIncrementEven={this.incrementEven}
+        onIncrementOdd={this.incrementOdd}
+        onIncrementAsync={this.incrementAsync}
       />
     );
   }
