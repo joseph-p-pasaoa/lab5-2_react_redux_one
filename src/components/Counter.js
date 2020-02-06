@@ -5,8 +5,7 @@ const Counter = ({
   onIncrement,
   onDecrement,
   onIncrementEven,
-  onIncrementOdd,
-  onIncrementAsync
+  onIncrementOdd
 }) => (
   <div>
     <p>value: {value}</p>
@@ -16,7 +15,7 @@ const Counter = ({
       <p>---</p>
       <button onClick={onIncrementEven}>+ (only if even)</button>
       <button onClick={onIncrementOdd}>+ (only if odd)</button>
-      <button onClick={onIncrementAsync}>+ (with 1s delay)</button>
+      <button onClick={() => setTimeout(onIncrement, 1000)}>+ (with 1s delay)</button>
     </div>
   </div>
 );
