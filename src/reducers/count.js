@@ -2,8 +2,7 @@ import {
   INCREMENT,
   DECREMENT,
   INCREMENT_IF_EVEN,
-  INCREMENT_IF_ODD,
-  INCREMENT_ASYNC
+  INCREMENT_IF_ODD
 } from "../actions/actionTypes";
 
 export default (state = 0, action) => {
@@ -24,10 +23,6 @@ export default (state = 0, action) => {
       if (newState % 2 === 1) {
         newState += 1;
       }
-      break;
-    case INCREMENT_ASYNC:
-      console.log("IAsync")
-      setTimeout(newState += 1, 1000);
       break;
     default:
       return newState;

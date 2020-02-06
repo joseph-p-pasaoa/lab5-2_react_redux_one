@@ -5,8 +5,7 @@ import {
   incrementCount,
   decrementCount,
   incrementCountEven,
-  incrementCountOdd,
-  incrementCountAsync
+  incrementCountOdd
 } from "../actions/counterActions";
 
 class CounterContainer extends React.Component {
@@ -30,10 +29,6 @@ class CounterContainer extends React.Component {
     dispatch(incrementCountOdd());
   };
 
-  incrementAsync = () => {
-    const { dispatch } = this.props;
-    dispatch(incrementCountAsync());
-  };
 
   render() {
     const { count } = this.props;
@@ -46,7 +41,6 @@ class CounterContainer extends React.Component {
         onDecrement={this.decrement}
         onIncrementEven={this.incrementEven}
         onIncrementOdd={this.incrementOdd}
-        onIncrementAsync={this.incrementAsync}
       />
     );
   }

@@ -2,8 +2,7 @@ import {
   INCREMENT,
   DECREMENT,
   INCREMENT_IF_EVEN,
-  INCREMENT_IF_ODD,
-  INCREMENT_ASYNC
+  INCREMENT_IF_ODD
 } from "./actionTypes";
 
 export const incrementCount = () => {
@@ -20,8 +19,4 @@ export const incrementCountEven = () => {
 
 export const incrementCountOdd = () => {
   return { type: INCREMENT_IF_ODD };
-};
-
-export const incrementCountAsync = () => {
-  return { type: INCREMENT_ASYNC };
 };
