@@ -1,31 +1,12 @@
-import {
-  INCREMENT,
-  DECREMENT,
-  INCREMENT_IF_EVEN,
-  INCREMENT_IF_ODD
-} from "../actions/actionTypes";
+import { INCREMENT, DECREMENT } from "../actions/actionTypes";
 
 export default (state = 0, action) => {
-  let newState = state;
   switch (action.type) {
     case INCREMENT:
-      newState += 1;
-      break;
+      return state + 1;
     case DECREMENT:
-      newState -= 1;
-      break;
-    case INCREMENT_IF_EVEN:
-      if (newState % 2 === 0) {
-        newState += 1;
-      }
-      break;
-    case INCREMENT_IF_ODD:
-      if (newState % 2 === 1) {
-        newState += 1;
-      }
-      break;
+      return state - 1;
     default:
-      return newState;
+      return state;
   }
-  return newState;
 };
